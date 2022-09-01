@@ -1,0 +1,265 @@
+ # Projeto Meu Banco
+
+## Criação de um sistema bancário utilizando os principais conceitos de orientação a objetos
+
+* Herança
+* Polimorfismo
+* Interfaces
+* Classes
+* Classes Abstratas
+* Polimorfismo
+* Listas
+
+### Explicando as associações
+
+Banco - Main
+
+Classe Pessoa - Super Classe
+
+Classe PessoaFisica - SubClasse Pessoa
+
+Classe PessoaJuridica - SubClasse Pessoa
+
+Classe Conta - Super Classe
+
+Classe ContaEspecial - SubClasse Conta
+
+Classe ContaPoupanca - SubClasse Conta
+
+Classe CompradorSaldoDec - Classe Comparator ( compara o saldo das contas )
+
+ElementoDoBanco - Interface que implementa a Classe Pessoa e Conta.
+
+Classe Movimento - Classe que armazena as transações financeiras.
+
+
+## Output 
+
+
+---- Relatorio ----------------------
+----------------------------
+Conta: 1
+Tipo: Conta Comum
+Abertura: 10/10/1998
+Status: Ativa
+Titular: PessoaFisica{cpf=111.111.111-11, dataNascimento=01/01/1980, rg=1.111.111 SSP/SC, renda=1000.0}
+Movimentos: 
+1         Deposito       1000.0
+2         Deposito       200.0
+3         Saque       500.0
+4         Saque       300.0
+5         Taxa       20.0
+Saldo: 1380.0
+----------------------------
+----------------------------
+----------------------------
+Conta: 2
+Tipo: Conta Comum
+Abertura: 01/07/2012
+Status: Ativa
+Titular: PessoaFisica{cpf=111.111.111-11, dataNascimento=01/01/1980, rg=1.111.111 SSP/SC, renda=1000.0}
+Movimentos: 
+1         Deposito       1000.0
+2         Deposito       200.0
+3         Saque       500.0
+4         Saque       300.0
+5         Taxa       20.0
+Saldo: 2580.0
+----------------------------
+----------------------------
+----------------------------
+Conta: 3
+Tipo: Conta Especial
+Limite: 3000.0
+Abertura: 05/03/2004
+Status: Ativa
+Titular: PessoaFisica{cpf=222.222.222-22, dataNascimento=30/03/1968, rg=2.222.222 SSP/PR, renda=3200.0}
+Movimentos: 
+1         Deposito     1000.0
+2         Deposito     200.0
+3         Saque     500.0
+4         Saque     300.0
+5         Taxa     30.0
+Saldo: 10370.0
+----------------------------
+----------------------------
+----------------------------
+Conta: 4
+Tipo: Conta Especial
+Limite: 5000.0
+Abertura: 15/10/2013
+Status: Ativa
+Titular: PessoaJuridica{cnpj=33.333.333/3333-33, cidade=Estofados 3 Irm os, estado=Rio de Janeiro}
+Movimentos: 
+1         Deposito     1000.0
+2         Deposito     200.0
+3         Saque     500.0
+4         Saque     300.0
+5         Taxa     30.0
+Saldo: 20370.0
+----------------------------
+----------------------------
+Conta: 5
+Tipo: Conta Poupanca
+Dia Aniversario: 10
+Abertura: 05/05/2020
+Status: Ativa
+Titular: PessoaFisica{cpf=222.222.222-22, dataNascimento=30/03/1968, rg=2.222.222 SSP/PR, renda=3200.0}
+Movimentos: 
+1         Deposito      1000.0
+2         Deposito      200.0
+3         Saque      500.0
+4         Saque      300.0
+5         Juros      52.0
+Saldo: 10400.0
+Rendimentos: 52.0
+----------------------------
+----------------------------
+Conta: 6
+Tipo: Conta Poupanca
+Dia Aniversario: 23
+Abertura: 05/05/2020
+Status: Ativa
+Titular: PessoaJuridica{cnpj=11.111.111/1111-11, cidade=XZ Servi os TI, estado=Blumenau}
+Movimentos: 
+1         Deposito      1000.0
+2         Deposito      200.0
+3         Saque      500.0
+4         Saque      300.0
+5         Juros      12.0
+Saldo: 2400.0
+Rendimentos: 12.0
+----------------------------
+----------------------------
+
+
+---- Testando a conta especial - saldo negativo ------------
+----------------------------
+Conta: 3
+Tipo: Conta Especial
+Limite: 3000.0
+Abertura: 05/03/2004
+Status: Ativa
+Titular: PessoaFisica{cpf=222.222.222-22, dataNascimento=30/03/1968, rg=2.222.222 SSP/PR, renda=3200.0}
+Movimentos: 
+1         Deposito     1000.0
+2         Deposito     200.0
+3         Saque     500.0
+4         Saque     300.0
+5         Taxa     30.0
+6         Saque     10000.0
+7         Saque     1000.0
+Saldo: -630.0
+----------------------------
+----------------------------
+
+
+---- Relatorio ordenado pelo Saldo Dec ----------------------
+----------------------------
+Conta: 4
+Tipo: Conta Especial
+Limite: 5000.0
+Abertura: 15/10/2013
+Status: Ativa
+Titular: PessoaJuridica{cnpj=33.333.333/3333-33, cidade=Estofados 3 Irm os, estado=Rio de Janeiro}
+Movimentos: 
+1         Deposito     1000.0
+2         Deposito     200.0
+3         Saque     500.0
+4         Saque     300.0
+5         Taxa     30.0
+Saldo: 20370.0
+----------------------------
+----------------------------
+Conta: 5
+Tipo: Conta Poupanca
+Dia Aniversario: 10
+Abertura: 05/05/2020
+Status: Ativa
+Titular: PessoaFisica{cpf=222.222.222-22, dataNascimento=30/03/1968, rg=2.222.222 SSP/PR, renda=3200.0}
+Movimentos: 
+1         Deposito      1000.0
+2         Deposito      200.0
+3         Saque      500.0
+4         Saque      300.0
+5         Juros      52.0
+Saldo: 10400.0
+Rendimentos: 52.0
+----------------------------
+----------------------------
+----------------------------
+Conta: 2
+Tipo: Conta Comum
+Abertura: 01/07/2012
+Status: Ativa
+Titular: PessoaFisica{cpf=111.111.111-11, dataNascimento=01/01/1980, rg=1.111.111 SSP/SC, renda=1000.0}
+Movimentos: 
+1         Deposito       1000.0
+2         Deposito       200.0
+3         Saque       500.0
+4         Saque       300.0
+5         Taxa       20.0
+Saldo: 2580.0
+----------------------------
+----------------------------
+Conta: 6
+Tipo: Conta Poupanca
+Dia Aniversario: 23
+Abertura: 05/05/2020
+Status: Ativa
+Titular: PessoaJuridica{cnpj=11.111.111/1111-11, cidade=XZ Servi os TI, estado=Blumenau}
+Movimentos: 
+1         Deposito      1000.0
+2         Deposito      200.0
+3         Saque      500.0
+4         Saque      300.0
+5         Juros      12.0
+Saldo: 2400.0
+Rendimentos: 12.0
+----------------------------
+----------------------------
+----------------------------
+Conta: 1
+Tipo: Conta Comum
+Abertura: 10/10/1998
+Status: Ativa
+Titular: PessoaFisica{cpf=111.111.111-11, dataNascimento=01/01/1980, rg=1.111.111 SSP/SC, renda=1000.0}
+Movimentos: 
+1         Deposito       1000.0
+2         Deposito       200.0
+3         Saque       500.0
+4         Saque       300.0
+5         Taxa       20.0
+Saldo: 1380.0
+----------------------------
+----------------------------
+----------------------------
+Conta: 3
+Tipo: Conta Especial
+Limite: 3000.0
+Abertura: 05/03/2004
+Status: Ativa
+Titular: PessoaFisica{cpf=222.222.222-22, dataNascimento=30/03/1968, rg=2.222.222 SSP/PR, renda=3200.0}
+Movimentos: 
+1         Deposito     1000.0
+2         Deposito     200.0
+3         Saque     500.0
+4         Saque     300.0
+5         Taxa     30.0
+6         Saque     10000.0
+7         Saque     1000.0
+Saldo: -630.0
+----------------------------
+----------------------------
+
+---- Criando lista  nica com todas as contas e clientes---
+PessoaFisica{cpf=111.111.111-11, dataNascimento=01/01/1980, rg=1.111.111 SSP/SC, renda=1000.0}
+PessoaFisica{cpf=222.222.222-22, dataNascimento=30/03/1968, rg=2.222.222 SSP/PR, renda=3200.0}
+PessoaJuridica{cnpj=11.111.111/1111-11, cidade=XZ Servi os TI, estado=Blumenau}
+PessoaJuridica{cnpj=33.333.333/3333-33, cidade=Estofados 3 Irm os, estado=Rio de Janeiro}
+ContaEspecial{ limite=5000.0, numero=4, dataAbertura=15/10/2013, status=true, senha=999mudar, saldo=20370.0, titular=PessoaJuridica{cnpj=33.333.333/3333-33, cidade=Estofados 3 Irm os, estado=Rio de Janeiro}}
+ContaPoupanca{ diaAniversario10, numero=5, dataAbertura=05/05/2020, status=true, senha=789mudar, saldo=10400.0, titular=PessoaFisica{cpf=222.222.222-22, dataNascimento=30/03/1968, rg=2.222.222 SSP/PR, renda=3200.0}}
+Conta{numero=2, dataAbertura=01/07/2012, status=true, senha=456mudar, saldo=2580.0, titular=PessoaFisica{cpf=111.111.111-11, dataNascimento=01/01/1980, rg=1.111.111 SSP/SC, renda=1000.0}}
+ContaPoupanca{ diaAniversario23, numero=6, dataAbertura=05/05/2020, status=true, senha=789mudar, saldo=2400.0, titular=PessoaJuridica{cnpj=11.111.111/1111-11, cidade=XZ Servi os TI, estado=Blumenau}}
+Conta{numero=1, dataAbertura=10/10/1998, status=true, senha=123mudar, saldo=1380.0, titular=PessoaFisica{cpf=111.111.111-11, dataNascimento=01/01/1980, rg=1.111.111 SSP/SC, renda=1000.0}}
+ContaEspecial{ limite=3000.0, numero=3, dataAbertura=05/03/2004, status=true, senha=789mudar, saldo=-630.0, titular=PessoaFisica{cpf=222.222.222-22, dataNascimento=30/03/1968, rg=2.222.222 SSP/PR, renda=3200.0}}
